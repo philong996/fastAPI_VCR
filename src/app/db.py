@@ -16,11 +16,11 @@ transactions = Table(
     "transactions",
     metadata,
     Column("id", Integer, primary_key=True),
+    Column("trans_code", String(16))
     Column("order_id", String(16), nullable=False),
     Column("customer_id", Integer, ForeignKey("customers.id"),nullable=False),
     Column("product_id", Integer, ForeignKey("products.id"), nullable=False),
     Column("promotion_id", Integer),
-    Column("store_id", String(8)),
     Column("price", Integer, nullable=False),
     Column("discount", Integer),
     Column("source", String(16)),
@@ -42,7 +42,7 @@ customers = Table(
     "customers",
     metadata,
     Column("id", Integer, primary_key=True),
-    Column("custome_code", String(16), nullable=False),
+    Column("customer_code", String(16), nullable=False),
     Column("gender", String(8)),
     Column("birthday", Date),
     Column("district", String(16)),
@@ -50,11 +50,6 @@ customers = Table(
     Column("email", String),
     Column("first_purchase_date", Date)
 )
-
-# promotions = Table(
-#     "promotioins",
-#     metadata,
-# )
 
 # databases query builder
 database = Database(DATABASE_URL)
