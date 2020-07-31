@@ -8,7 +8,7 @@ from databases import Database
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-# SQLAlchemy
+# SQLAlchemy connection
 engine = create_engine(DATABASE_URL)
 metadata = MetaData()
 
