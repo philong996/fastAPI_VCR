@@ -16,7 +16,7 @@ transactions = Table(
     "transactions",
     metadata,
     Column("id", Integer, primary_key=True),
-    Column("trans_code", String(16))
+    Column("trans_code", String(16)),
     Column("order_id", String(16), nullable=False),
     Column("customer_id", Integer, ForeignKey("customers.id"),nullable=False),
     Column("product_id", Integer, ForeignKey("products.id"), nullable=False),

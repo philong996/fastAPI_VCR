@@ -12,16 +12,16 @@ class TransactionSchema(BaseModel):
     discount : float 
     source : str 
     store : str
-    created_date: datetime
+    created_date: str
 
-class CustomerSchema(Base):
+class CustomerSchema(BaseModel):
     customer_code : str
     gender : str
-    birthday : str
+    birthday : date
     district : str
     city : str
     email : str
-    first_purchase_date : datetime
+    first_purchase_date : date
 
 class CustomerDB(CustomerSchema):
     id : int

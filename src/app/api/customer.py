@@ -19,3 +19,4 @@ async def add_customer(payload: CustomerSchema):
         "email" : payload.email,
         "first_purchase_date" : payload.first_purchase_date
     }
+    return response_object
