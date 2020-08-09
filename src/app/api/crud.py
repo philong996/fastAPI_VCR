@@ -18,3 +18,16 @@ async def insert_product(payload: ProductSchema):
                                     design_group = payload.design_group,
                                     price_segment = payload.price_segment)
     return await database.execute(query=query)
+
+
+async def insert_transaction(payload: TransactionSchema):
+    query = transactions.insert().values(trans_code = payload.trans_code,
+                                    customer_id = payload.customer_id,
+                                    product_id = payload.product_id,
+                                    promotion_code = payload.promotion_code,
+                                    price = payload.price,
+                                    discount = payload.discount,
+                                    source = payload.source,
+                                    store = payload.store,
+                                    created_date = payload.created_date)
+    return await database.execute(query=query)

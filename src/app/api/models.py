@@ -3,16 +3,14 @@ from datetime import date, datetime
 
 class TransactionSchema(BaseModel):
     trans_code : str
-    trans_code : str
-    customer_id : str
-    product_id : str
-    promotion_id : str
-    store_id : str
+    customer_id : int
+    product_id : int
+    promotion_code : str
     price : int
     discount : float 
     source : str 
     store : str
-    created_date: str
+    created_date: date
 
 class TransactionDB(TransactionSchema):
     id : int

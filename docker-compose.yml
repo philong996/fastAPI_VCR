@@ -2,16 +2,6 @@ version: '3.3'
 
 services:
   
-  web:
-    build: ./src
-    command: uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
-    volumes:
-      - ./src/:/usr/src/app/
-    ports:
-      - 8005:8000
-    environment:
-      - DATABASE_URL=postgresql://plong:plong_data@db/vcr_dev
-  
   db:
     image: postgres:12.1-alpine
     volumes:
@@ -22,6 +12,16 @@ services:
       - POSTGRES_USER=plong
       - POSTGRES_PASSWORD=plong_data
       - POSTGRES_DB=vcr_dev
+  
+  web:
+    build: ./src
+    command: uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
+    volumes:
+      - ./src/:/usr/src/app/
+    ports:
+      - 8005:8000
+    environment:
+      - DATABASE_URL=postgresql://plong:plong_data@db/vcr_dev
 
 volumes:
   postgres_data:

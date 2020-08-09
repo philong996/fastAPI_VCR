@@ -1,6 +1,6 @@
 import os
 
-from sqlalchemy import Column, DateTime, Integer, MetaData, String, Table, Date, create_engine, ForeignKey
+from sqlalchemy import Column, DateTime, Integer, MetaData, String, Table, Date, create_engine, ForeignKey, Float
 
 from sqlalchemy.sql import func
 
@@ -17,12 +17,11 @@ transactions = Table(
     metadata,
     Column("id", Integer, primary_key=True),
     Column("trans_code", String(16)),
-    Column("order_id", String(16), nullable=False),
     Column("customer_id", Integer, ForeignKey("customers.id"),nullable=False),
     Column("product_id", Integer, ForeignKey("products.id"), nullable=False),
-    Column("promotion_id", Integer),
+    Column("promotion_code", String(16)),
     Column("price", Integer, nullable=False),
-    Column("discount", Integer),
+    Column("discount", Float),
     Column("source", String(16)),
     Column("store",String(16)),
     Column("created_date", DateTime, default=func.now(), nullable=False),
