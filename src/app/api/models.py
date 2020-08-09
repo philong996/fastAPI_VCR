@@ -14,6 +14,9 @@ class TransactionSchema(BaseModel):
     store : str
     created_date: str
 
+class TransactionDB(TransactionSchema):
+    id : int
+
 class CustomerSchema(BaseModel):
     customer_code : str
     gender : str
@@ -24,4 +27,13 @@ class CustomerSchema(BaseModel):
     first_purchase_date : date
 
 class CustomerDB(CustomerSchema):
+    id : int
+
+class ProductSchema(BaseModel):
+    product_code: str
+    category: str
+    design_group: str
+    price_segment: str
+
+class ProductDB(ProductSchema):
     id : int
