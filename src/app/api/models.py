@@ -7,7 +7,10 @@ class TransactionSchema(BaseModel):
     product_id : int
     promotion_code : str
     price : int
-    discount : float 
+    discount : float
+    diamond_code : str
+    discount_diamond : float
+    price_diamond : int 
     source : str 
     store : str
     created_date: date

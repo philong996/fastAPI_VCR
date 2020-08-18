@@ -27,6 +27,9 @@ async def insert_transaction(payload: TransactionSchema):
                                     promotion_code = payload.promotion_code,
                                     price = payload.price,
                                     discount = payload.discount,
+                                    price_diamond = payload.price_diamond,
+                                    discount_diamond = payload.discount_diamond,
+                                    diamond_code = payload.diamond_code,
                                     source = payload.source,
                                     store = payload.store,
                                     created_date = payload.created_date)

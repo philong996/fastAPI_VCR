@@ -33,9 +33,12 @@ trans = {
   "trans_code": "string",
   "customer_id": 0,
   "product_id": 0,
-  "promotion_id": "string",
+  "promotion_code": "string",
   "price": 0,
   "discount": 0,
+  "diamond_code": "string",
+  "discount_diamond": 0,
+  "price_diamond": 0,
   "source": "string",
   "store": "string",
   "created_date": "2020-08-18"
