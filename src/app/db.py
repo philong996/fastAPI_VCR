@@ -26,7 +26,7 @@ transactions = Table(
     Column("price", Integer, nullable=False),
     Column("discount", Float),
     Column("source", String(16)),
-    Column("store",String(16)),
+    Column("store",String(32)),
     Column("created_date", DateTime, default=func.now(), nullable=False),
 )
 
@@ -47,7 +47,7 @@ customers = Table(
     Column("customer_code", String(16), nullable=False),
     Column("gender", String(8)),
     Column("birthday", Date),
-    Column("district", String(16)),
+    Column("district", String(32)),
     Column("city", String(32)),
     Column("email", String),
     Column("first_purchase_date", Date)
