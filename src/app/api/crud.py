@@ -16,7 +16,8 @@ async def insert_product(payload: ProductSchema):
     query = products.insert().values(product_code = payload.product_code,
                                     category = payload.category,
                                     design_group = payload.design_group,
-                                    price_segment = payload.price_segment)
+                                    price_segment = payload.price_segment,
+                                    size_diamond = payload.size_diamond),
     return await database.execute(query=query)
 
 

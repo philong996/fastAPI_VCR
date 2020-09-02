@@ -13,7 +13,8 @@ async def add_product(payload: ProductSchema):
         "product_code": payload.product_code,
         "category": payload.category,
         "design_group": payload.design_group,
-        "price_segment": payload.price_segment
+        "price_segment": payload.price_segment,
+        "size_diamond" : payload.size_diamond
     }
     return response_object
 

@@ -35,6 +35,7 @@ class ProductSchema(BaseModel):
     category: str
     design_group: str
     price_segment: str
+    size_diamond: str
 
 class ProductDB(ProductSchema):
     id : int
