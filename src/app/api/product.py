@@ -16,3 +16,8 @@ async def add_product(payload: ProductSchema):
         "price_segment": payload.price_segment
     }
     return response_object
+
+@router.get("/{product_code}", response_model=ProductDB)
+async def get_product(product_code: str):
+    product = await crud.get_at("products", product_code)
+    return product

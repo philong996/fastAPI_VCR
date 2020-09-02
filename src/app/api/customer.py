@@ -20,3 +20,10 @@ async def add_customer(payload: CustomerSchema):
         "first_purchase_date" : payload.first_purchase_date
     }
     return response_object
+
+
+@router.get("/{customer_code}", response_model=CustomerDB)
+async def get_product(customer_code: str):
+    customer = await crud.get_at("customers", customer_code)
+
+    return customer

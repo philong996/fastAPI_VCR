@@ -34,3 +34,13 @@ async def insert_transaction(payload: TransactionSchema):
                                     store = payload.store,
                                     created_date = payload.created_date)
     return await database.execute(query=query)
+
+async def get_at(table, code):
+    if table == "products":
+        query = products.select().where(products.c.product_code == code)
+        return await database.fetch_one(query)
+    elif table == "customers":
+        query = customers.select().where(customers.c.customer_code == code)
+        return await database.fetch_one(query)
+    else:
+        return None
