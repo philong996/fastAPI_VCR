@@ -37,7 +37,8 @@ products = Table(
     Column("product_code", String(16), nullable=False),
     Column("category", String(16)),
     Column("design_group", String(16)),
-    Column("price_segment", String(8))
+    Column("price_segment", String(8)),
+    Column("size_diamond", String(16))
 )
 
 customers = Table(
