@@ -8,9 +8,9 @@ class TransactionSchema(BaseModel):
     promotion_code : str
     price : int
     discount : float
-    diamond_code : str
+    diamond_code : list
     discount_diamond : float
-    price_diamond : str 
+    price_diamond : list 
     source : str 
     store : str
     created_date: date

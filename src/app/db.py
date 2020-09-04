@@ -1,6 +1,6 @@
 import os
 
-from sqlalchemy import Column, DateTime, Integer, MetaData, String, Table, Date, create_engine, ForeignKey, Float
+from sqlalchemy import Column, DateTime, Integer, MetaData, String, Table, Date, create_engine, ForeignKey, Float, ARRAY
 
 from sqlalchemy.sql import func
 
@@ -20,9 +20,9 @@ transactions = Table(
     Column("customer_id", Integer, ForeignKey("customers.id"),nullable=False),
     Column("product_id", Integer, ForeignKey("products.id"), nullable=False),
     Column("promotion_code", String(16)),
-    Column("diamond_code", String(16)),
+    Column("diamond_code", ARRAY(String)),
     Column("discount_diamond", Float),
-    Column("price_diamond", String(32)),
+    Column("price_diamond", ARRAY(Integer)),
     Column("price", Integer, nullable=False),
     Column("discount", Float),
     Column("source", String(16)),
