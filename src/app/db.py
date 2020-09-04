@@ -22,7 +22,7 @@ transactions = Table(
     Column("promotion_code", String(16)),
     Column("diamond_code", String(16)),
     Column("discount_diamond", Float),
-    Column("price_diamond", Integer),
+    Column("price_diamond", String(32)),
     Column("price", Integer, nullable=False),
     Column("discount", Float),
     Column("source", String(16)),

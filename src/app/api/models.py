@@ -10,7 +10,7 @@ class TransactionSchema(BaseModel):
     discount : float
     diamond_code : str
     discount_diamond : float
-    price_diamond : int 
+    price_diamond : str 
     source : str 
     store : str
     created_date: date
