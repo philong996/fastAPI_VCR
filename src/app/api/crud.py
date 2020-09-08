@@ -45,3 +45,13 @@ async def get_at(table, code):
         return await database.fetch_one(query)
     else:
         return None
+
+async def get_by_id(table, id):
+    if table == "products":
+        query = products.select().where(products.c.id == id)
+        return await database.fetch_one(query)
+    elif table == "customers":
+        query = customers.select().where(customers.c.id == id)
+        return await database.fetch_one(query)
+    else:
+        return None    

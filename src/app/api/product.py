@@ -18,7 +18,13 @@ async def add_product(payload: ProductSchema):
     }
     return response_object
 
-@router.get("/{product_code}", response_model=ProductDB)
+@router.get("/", response_model=ProductDB)
 async def get_product(product_code: str):
     product = await crud.get_at("products", product_code)
+    return product
+
+@router.get("/{id}", response_model=ProductDB)
+async def get_product_id(id: int):
+    print("ok")
+    product = await crud.get_by_id("products", id)
     return product
