@@ -26,3 +26,10 @@ async def add_customer(payload: TransactionSchema):
         "created_date": payload.created_date
     }
     return response_object
+
+
+@router.get("/{id}", response_model=TransactionDB)
+async def get_product_id(id: int):
+    trans = await crud.get_by_id("transaction", id)
+
+    return trans

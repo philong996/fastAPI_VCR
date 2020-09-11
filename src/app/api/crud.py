@@ -53,5 +53,8 @@ async def get_by_id(table, id):
     elif table == "customers":
         query = customers.select().where(customers.c.id == id)
         return await database.fetch_one(query)
+    elif table == "transaction":
+        query = transactions.select().where(transactions.c.id == id)
+        return await database.fetch_one(query)
     else:
         return None    
